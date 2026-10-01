@@ -1,10 +1,10 @@
 :root{
-  --verde:#1F3A32;
-  --verde-claro:#3C5A4F;
-  --papel:#F6F7F3;
-  --rosa:#EBD3CD;
-  --tinta:#1B2421;
-  --ouro:#A98456;
+  --verde:#1B2D4F;        /* azul-marinho profundo */
+  --verde-claro:#2E4A73;  /* azul médio para fundos secundários */
+  --papel:#F5F5F0;        /* off-white levemente quente */
+  --rosa:#D6E0EE;         /* azul-acinzentado suave no lugar do rosa */
+  --tinta:#151E2E;        /* quase-preto com tom azulado */
+  --ouro:#A98456;         /* dourado — funciona perfeitamente com azul */
   --fonte-titulo:"Cormorant",Georgia,serif;
   --fonte-texto:"Jost",system-ui,sans-serif;
 }
@@ -88,4 +88,50 @@ h3{font-family:var(--fonte-titulo);font-weight:500;font-size:1.5rem;line-height:
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   .hero__nomes{animation:none}
+}
+
+.presentes li img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+  margin-bottom: .8rem;
+  display: block;
+}
+
+
+
+.secao--mimos {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--verde);
+  color: var(--papel);
+  padding: 6rem 5vw;
+}
+
+.mimos__conteudo {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.mimos__subtitulo {
+  font-family: var(--fonte-titulo);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--rosa);
+}
+
+.mimos__conteudo h2 {
+  margin-bottom: 0;
+}
+
+.mimos__conteudo p {
+  max-width: 46ch;
 }
