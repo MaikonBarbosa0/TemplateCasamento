@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Giulia & Maikon — Nosso casamento</title>
+<meta name="description" content="Convite do casamento de Giulia e Maikon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+  <a href="#inicio" class="topo__marca">G &amp; M</a>
+  <nav class="topo__menu" aria-label="Principal">
+    <a href="#historia">Nossa história</a>
+    <a href="#programacao">Programação</a>
+    <a href="#local">Local</a>
+    <a href="#presentes">Presentes</a>
+    <a href="#rsvp" class="topo__cta">Confirmar presença</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <p class="hero__chamada">Vamos nos casar</p>
+    <h1 class="hero__nomes">Giulia<span>&amp;</span>Maikon</h1>
+    <p class="hero__data">3 de Abril de 2027 · Votorantim, SP</p>
+    <div class="contagem" id="contagem" aria-live="off">
+      <div><strong id="dias">00</strong><span>dias</span></div>
+      <div><strong id="horas">00</strong><span>horas</span></div>
+      <div><strong id="minutos">00</strong><span>minutos</span></div>
+      <div><strong id="segundos">00</strong><span>segundos</span></div>
+    </div>
+  </section>
+
+  <section class="secao" id="historia">
+    <h2>Nossa história</h2>
+    <div class="historia">
+       <p>Dividimos as mesmas aulas de violão quando éramos crianças — os mesmos acordes, a mesma professora, a mesma dificuldade com o dó maior. Crescemos, a vida seguiu, e por um tempo os caminhos foram paralelos sem se tocar.</p>
+      <p>Foi em um festival que tudo mudou. Entre as músicas, ele olhou para ela de um jeito que nenhuma aula havia ensinado. A partir daí, as conversas não tinham mais hora para terminar, as ideias combinavam, e o amor foi crescendo no ritmo certo.</p>
+      <p>No dia 12 de outubro de 2025, veio o pedido. Veio o sim. Agora queremos você ao nosso lado no próximo capítulo.</p>
+    </div>
+  </section>
+
+  <section class="secao secao--escura" id="programacao">
+    <h2>Programação</h2>
+    <ol class="linha">
+      <li><time>16h00</time><div><h3>Cerimônia</h3><p>Chegue um pouco antes para escolher seu lugar.</p></div></li>
+      <li><time>17h30</time><div><h3>Coquetel</h3><p>Petiscos e bebidas no jardim.</p></div></li>
+      <li><time>19h00</time><div><h3>Jantar</h3><p>Mesas compartilhadas, sem lugar marcado.</p></div></li>
+      <li><time>21h00</time><div><h3>Festa</h3><p>Pista aberta até a última música.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="secao" id="local">
+    <h2>Local</h2>
+    <div class="local">
+      <div>
+        <h3>Espaço Jardim das Palmeiras</h3>
+        <p>Rua das Palmeiras, 123<br>Votorantim, SP</p>
+        <p>Estacionamento gratuito no local. Haverá transporte saindo do hotel parceiro às 15h00.</p>
+        <a class="botao botao--linha" href="https://maps.google.com/?q=Votorantim+SP" target="_blank" rel="noopener">Abrir no mapa</a>
+      </div>
+      <div class="local__mapa">
+        <iframe title="Mapa do local" loading="lazy" src="https://www.google.com/maps?q=Votorantim+SP&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="secao secao--rosa" id="presentes">
+    <h2>Lista de presentes</h2>
+    <p class="intro">Sua presença é o que mais importa. Se quiser nos presentear, escolha uma das opções.</p>
+    <ul class="presentes">
+      <li><h3>Lua de mel</h3><p>Ajude a pagar nossa viagem.</p><a class="botao" href="#" target="_blank" rel="noopener">Contribuir</a></li>
+      <li><h3>Casa nova</h3><p>Itens para o nosso primeiro apartamento.</p><a class="botao" href="#" target="_blank" rel="noopener">Ver lista</a></li>
+      <li><h3>Pix</h3><p>Chave: GiuliaeMaikon@email.com</p><button class="botao" id="copiarPix" type="button">Copiar chave</button></li>
+    </ul>
+  </section>
+
+  <section class="secao" id="rsvp">
+    <h2>Confirme sua presença</h2>
+    <p class="intro">Responda até 10 de novembro de 2026.</p>
+    <form id="formRsvp" class="form" novalidate>
+      <label>Nome completo
+        <input type="text" name="nome" required autocomplete="name">
+        <small class="erro" data-erro="nome"></small>
+      </label>
+      <label>Você vai?
+        <select name="presenca" required>
+          <option value="">Selecione</option>
+          <option value="Sim, estarei lá">Sim, estarei lá</option>
+          <option value="Não poderei ir">Não poderei ir</option>
+        </select>
+        <small class="erro" data-erro="presenca"></small>
+      </label>
+      <label>Quantas pessoas, incluindo você?
+        <input type="number" name="pessoas" min="1" max="6" value="1">
+      </label>
+      <label>Restrição alimentar ou recado
+        <textarea name="mensagem" rows="3"></textarea>
+      </label>
+      <button type="submit" class="botao">Enviar confirmação</button>
+      <p class="form__status" id="status" role="status"></p>
+    </form>
+  </section>
+</main>
+
+<footer class="rodape">
+  <p>Giulia &amp; Maikon · 03.04.2027</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
