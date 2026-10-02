@@ -64,3 +64,17 @@ form.addEventListener("submit", e => {
   el("status").textContent = "Obrigado! Sua confirmação foi preparada no WhatsApp.";
   form.reset();
 });
+
+function copiarPix(botao) {
+  navigator.clipboard.writeText(CONFIG.chavePix).then(() => {
+    const textoOriginal = botao.textContent;
+    botao.textContent = "Chave copiada! ✓";
+    botao.style.background = "var(--ouro)";
+    botao.style.borderColor = "var(--ouro)";
+    setTimeout(() => {
+      botao.textContent = textoOriginal;
+      botao.style.background = "";
+      botao.style.borderColor = "";
+    }, 2500);
+  });
+}
