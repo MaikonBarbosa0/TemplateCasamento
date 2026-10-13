@@ -1,8 +1,7 @@
 // ===== CONFIGURAÇÕES: edite aqui =====
 const CONFIG = {
   dataCasamento: "2027-04-03T16:00:00-03:00",
-  whatsapp: "5515997228905", // DDI + DDD + número, só dígitos
-  chavePix: "(15) 997228905"
+  whatsapp: "5515997228905" // DDI + DDD + número, só dígitos
 };
 
 // ===== Contagem regressiva =====
@@ -23,24 +22,6 @@ function atualizarContagem() {
 }
 const timer = setInterval(atualizarContagem, 1000);
 atualizarContagem();
-
-// ===== Copiar chave Pix =====
-document.querySelectorAll('[data-pix]').forEach(botao => {
-  botao.addEventListener('click', async () => {
-    botao.disabled = true;
-    try {
-      await navigator.clipboard.writeText(CONFIG.chavePix);
-      botao.textContent = 'Chave copiada!';
-      el('pixStatus').textContent = 'Abra seu banco e use a chave copiada para contribuir com o valor que desejar.';
-    } catch {
-      el('pixStatus').textContent = 'Não foi possível copiar automaticamente. Chave Pix: ' + CONFIG.chavePix;
-    }
-    setTimeout(() => {
-      botao.textContent = 'Contribuir';
-      botao.disabled = false;
-    }, 2500);
-  });
-});
 
 // ===== Formulário de confirmação (abre o WhatsApp com a resposta) =====
 const form = el("formRsvp");

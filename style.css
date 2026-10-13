@@ -36,10 +36,10 @@ a{color:inherit}
 
 /* Seções */
 .secao{padding:6rem 5vw;max-width:1100px;margin:0 auto}
-.secao--escura,.secao--rosa{max-width:none}
+.secao--escura{max-width:none}
 .secao--escura{background:var(--verde-claro);color:var(--papel)}
-.secao--rosa{background:var(--rosa)}
-.secao--escura>*,.secao--rosa>*{max-width:1000px;margin-inline:auto}
+
+.secao--escura>*{max-width:1000px;margin-inline:auto}
 h2{font-family:var(--fonte-titulo);font-weight:400;font-size:clamp(2.2rem,5vw,3.4rem);line-height:1.1;margin-bottom:2rem}
 h3{font-family:var(--fonte-titulo);font-weight:500;font-size:1.5rem;line-height:1.2}
 .intro{max-width:56ch;margin-bottom:2rem}
@@ -57,10 +57,6 @@ h3{font-family:var(--fonte-titulo);font-weight:500;font-size:1.5rem;line-height:
 .local{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;align-items:center}
 .local p{margin:.8rem 0}
 .local__mapa iframe{width:100%;height:340px;border:0;border-radius:4px}
-
-/* Presentes */
-.presentes{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem}
-.presentes li{border-top:1px solid var(--verde);padding-top:1rem;display:flex;flex-direction:column;gap:.6rem;align-items:flex-start}
 
 /* Botões */
 .botao{display:inline-block;font:inherit;font-weight:400;cursor:pointer;text-decoration:none;background:var(--verde);color:var(--papel);border:1px solid var(--verde);padding:.7rem 1.6rem;border-radius:999px;transition:background .2s,color .2s}
@@ -90,15 +86,7 @@ h3{font-family:var(--fonte-titulo);font-weight:500;font-size:1.5rem;line-height:
   .hero__nomes{animation:none}
 }
 
-.presentes li img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 4px;
-  margin-bottom: .8rem;
-  display: block;
-}
+
 
 
 
@@ -223,12 +211,6 @@ h3{font-family:var(--fonte-titulo);font-weight:500;font-size:1.5rem;line-height:
 .hero__rolar span{display:inline-block;margin-left:.4rem}
 #historia{padding-bottom:2rem}
 #galeria{padding-top:2rem}
-.secao--rosa>.intro{max-width:1000px}
-.presentes li{height:100%;padding-bottom:.5rem}
-.presentes li .botao{margin-top:auto}
-.presentes li p{margin-bottom:.6rem}
-.presentes li img{filter:saturate(.8);background:var(--papel)}
-.pix__status{margin-top:1.5rem;min-height:1.7em;font-weight:400;overflow-wrap:anywhere}
 .local__horario{color:var(--papel);font-weight:400}
 .rsvp__ajuda{max-width:560px;margin-bottom:2rem}
 .form__ajuda{font-weight:300;font-size:.85rem}
@@ -244,7 +226,6 @@ h3{font-family:var(--fonte-titulo);font-weight:500;font-size:1.5rem;line-height:
   .hero__nomes{font-size:clamp(3.5rem,15vw,6rem)}
   .contagem{gap:1rem}
   .contagem div{min-width:50px}
-  .presentes{grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr))}
   #historia{padding-bottom:1.5rem}
   #galeria{padding-top:1.5rem}
 }
@@ -268,3 +249,5 @@ h3{font-family:var(--fonte-titulo);font-weight:500;font-size:1.5rem;line-height:
 }
 
 
+
+.hero__convite{max-width:32ch;color:var(--rosa);margin:-1.5rem 0 2rem}
