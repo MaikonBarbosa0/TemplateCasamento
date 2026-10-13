@@ -49,7 +49,7 @@ form.addEventListener("submit", e => {
   const vai = dados.presenca === 'Sim, estarei lá';
   const quantidade = vai ? Number(dados.pessoas) : 0;
   const erroPessoas = form.querySelector('[data-erro="pessoas"]');
-  if (vai && (!Number.isInteger(quantidade) || quantidade < 1 || quantidade > 6)) {
+  if (vai && (!Number.isInteger(quantidade) || quantidade < 1 || quantidade > 9)) {
     erroPessoas.textContent = 'Informe de 1 a 6 pessoas, conforme seu convite.';
     valido = false;
   } else {
