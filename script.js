@@ -25,19 +25,32 @@ const timer = setInterval(atualizarContagem, 1000);
 atualizarContagem();
 
 // ===== Copiar chave Pix =====
-el("copiarPix").addEventListener("click", async e => {
-  const botao = e.currentTarget;
-  try {
-    await navigator.clipboard.writeText(CONFIG.chavePix);
-    botao.textContent = "Chave copiada";
-  } catch {
-    botao.textContent = "Copie: " + CONFIG.chavePix;
-  }
-  setTimeout(() => (botao.textContent = "Copiar chave"), 3000);
+document.querySelectorAll('[data-pix]').forEach(botao => {
+  botao.addEventListener('click', async () => {
+    botao.disabled = true;
+    try {
+      await navigator.clipboard.writeText(CONFIG.chavePix);
+      botao.textContent = 'Chave copiada!';
+      el('pixStatus').textContent = 'Abra seu banco e use a chave copiada para contribuir com o valor que desejar.';
+    } catch {
+      el('pixStatus').textContent = 'Não foi possível copiar automaticamente. Chave Pix: ' + CONFIG.chavePix;
+    }
+    setTimeout(() => {
+      botao.textContent = 'Contribuir';
+      botao.disabled = false;
+    }, 2500);
+  });
 });
 
 // ===== Formulário de confirmação (abre o WhatsApp com a resposta) =====
 const form = el("formRsvp");
+const pessoas = form.elements.pessoas;
+form.elements.presenca.addEventListener('change', () => {
+  const naoVai = form.elements.presenca.value === 'Não poderei ir';
+  pessoas.disabled = naoVai;
+  pessoas.value = naoVai ? '0' : '1';
+  form.querySelector('[data-erro="pessoas"]').textContent = '';
+});
 form.addEventListener("submit", e => {
   e.preventDefault();
   const dados = Object.fromEntries(new FormData(form));
@@ -52,29 +65,26 @@ form.addEventListener("submit", e => {
       msg.textContent = "";
     }
   });
-  if (!valido) return;
+  const vai = dados.presenca === 'Sim, estarei lá';
+  const quantidade = vai ? Number(dados.pessoas) : 0;
+  const erroPessoas = form.querySelector('[data-erro="pessoas"]');
+  if (vai && (!Number.isInteger(quantidade) || quantidade < 1 || quantidade > 6)) {
+    erroPessoas.textContent = 'Informe de 1 a 6 pessoas, conforme seu convite.';
+    valido = false;
+  } else {
+    erroPessoas.textContent = '';
+  }
+  if (!valido) {
+    form.querySelector('[data-erro]:not(:empty)').parentElement.querySelector('input, select').focus();
+    return;
+  }
 
   const texto =
-    `Olá! Aqui é ${dados.nome}.\n` +
+    `Olá! Aqui é ${dados.nome.trim()}.\n` +
     `Presença: ${dados.presenca}\n` +
-    `Pessoas: ${dados.pessoas}\n` +
+    `Pessoas: ${quantidade}\n` +
     (dados.mensagem ? `Recado: ${dados.mensagem}` : "");
 
   window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(texto)}`, "_blank", "noopener");
-  el("status").textContent = "Obrigado! Sua confirmação foi preparada no WhatsApp.";
-  form.reset();
+  el("status").textContent = "Sua resposta está preparada. Envie a mensagem no WhatsApp para concluir. Se ele não abrir, clique novamente no botão.";
 });
-
-function copiarPix(botao) {
-  navigator.clipboard.writeText(CONFIG.chavePix).then(() => {
-    const textoOriginal = botao.textContent;
-    botao.textContent = "Chave copiada! ✓";
-    botao.style.background = "var(--ouro)";
-    botao.style.borderColor = "var(--ouro)";
-    setTimeout(() => {
-      botao.textContent = textoOriginal;
-      botao.style.background = "";
-      botao.style.borderColor = "";
-    }, 2500);
-  });
-}

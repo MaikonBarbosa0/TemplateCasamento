@@ -30,13 +30,15 @@
     <section class="hero" id="inicio">
       <p class="hero__chamada">Vamos nos casar</p>
       <h1 class="hero__nomes">Giulia<span>&amp;</span>Maikon</h1>
-      <p class="hero__data">3 de Abril de 2027 · Votorantim, SP</p>
+      <p class="hero__data">3 de abril de 2027 · 16h · Votorantim, SP</p>
       <div class="contagem" id="contagem" aria-live="off">
         <div><strong id="dias">00</strong><span>dias</span></div>
         <div><strong id="horas">00</strong><span>horas</span></div>
         <div><strong id="minutos">00</strong><span>minutos</span></div>
         <div><strong id="segundos">00</strong><span>segundos</span></div>
       </div>
+      <a class="botao hero__cta" href="#rsvp">Confirmar presença</a>
+      <a class="hero__rolar" href="#historia">Conheça nossa história <span aria-hidden="true">↓</span></a>
     </section>
 
     <section class="secao" id="historia">
@@ -58,7 +60,7 @@
       <div class="timeline-fotos">
 
         <div class="timeline-fotos__item">
-          <img src="img/foto1.jpg" alt="Aulas de violão">
+          <img src="img/violao.jfif" alt="Aulas de violão">
           <div class="timeline-fotos__info">
             <span class="timeline-fotos__ano">2012</span>
             <h3>O começo de tudo</h3>
@@ -67,7 +69,7 @@
         </div>
 
         <div class="timeline-fotos__item">
-          <img src="img/foto2.jpg" alt="O festival">
+          <img src="img/summer.png" alt="O festival">
           <div class="timeline-fotos__info">
             <span class="timeline-fotos__ano">2024</span>
             <h3>O festival</h3>
@@ -97,9 +99,10 @@
     </section>
 
     <section class="secao secao--escura" id="local">
-      <h2>Local</h2>
+      <h2>A cerimônia</h2>
       <div class="local">
         <div>
+          <p class="local__horario">3 de abril de 2027 · às 16h</p>
           <h3>Paróquia Nossa Senhora Anunciação e dos Arcanjos </h3>
           <p>Rua Antônio da Silva, 72, Jardim São Matheus<br>Votorantim, SP</p>
           <a class="botao "
@@ -119,45 +122,47 @@
       <ul class="presentes">
        
         <li>
-          <img src="img/luademel.jpg">
+          <img src="img/luademel.jpg" alt="Corações na praia" loading="lazy">
           <h3>Lua de mel</h3>
           <p>Ajude a pagar nossa viagem.</p>
-          <a class="botao" rel="noopener" onclick="copiarPix(this)">Contribuir</a>
+          <button class="botao" type="button" data-pix>Contribuir</button>
         </li>
         <li>
-          <img src="img/casanova.webp">
+          <img src="img/casanova.webp" alt="Chaves da casa nova" loading="lazy">
           <h3>Casa nova</h3>
-          <p>Itens para a nossa primeira casa.</p><a class="botao" rel="noopener" onclick="copiarPix(this)">Contribuir</a>
+          <p>Itens para a nossa primeira casa.</p><button class="botao" type="button" data-pix>Contribuir</button>
         </li>
         <li>
           <img src="img/vestido.jpg" alt="Vestido">
           <h3>O vestido</h3>
           <p>Ela jurou que só usa uma vez. A gente acredita.</p>
-          <a class="botao" rel="noopener" onclick="copiarPix(this)">Contribuir</a>
+          <button class="botao" type="button" data-pix>Contribuir</button>
         </li>
         <li>
           <img src="img/cueca.webp" alt="Cueca do noivo">
           <h3>Cueca do noivo</h3>
           <p>Ele pediu a mais bonita. A gente não perguntou o porquê.</p>
-          <a class="botao" rel="noopener" onclick="copiarPix(this)">Contribuir</a>
+          <button class="botao" type="button" data-pix>Contribuir</button>
         </li>
         <li>
           <img src="img/alianca.jfif" alt="Aliança">
           <h3>As alianças</h3>
           <p>Pequenas, redondas e caras. Exatamente como o amor.</p>
-          <a class="botao" rel="noopener" onclick="copiarPix(this)">Contribuir</a>
+          <button class="botao" type="button" data-pix>Contribuir</button>
         </li>
         <li>
-          <img src="img/mimo.jfif">
+          <img src="img/mimo.jfif" alt="Brinde do casal" loading="lazy">
           <h3>Um mimo</h3>
-          <p> Para quem quiser deixar um pouquinho de amor além da presença. </p><button class="botao" id="copiarPix" type="button" >Contribuir</button>
+          <p> Para quem quiser deixar um pouquinho de amor além da presença. </p><button class="botao" type="button" data-pix>Contribuir</button>
         </li>
       </ul>
+      <p class="pix__status" id="pixStatus" role="status"></p>
     </section>
 
     <section class="secao" id="rsvp">
       <h2>Confirme sua presença</h2>
       <p class="intro">Responda até 10 de novembro de 2026.</p>
+      <p class="rsvp__ajuda">Ao continuar, o WhatsApp abrirá com sua resposta. Envie a mensagem por lá para concluir a confirmação.</p>
       <form id="formRsvp" class="form" novalidate>
         <label>Nome completo
           <input type="text" name="nome" required autocomplete="name">
@@ -172,12 +177,14 @@
           <small class="erro" data-erro="presenca"></small>
         </label>
         <label>Quantas pessoas, incluindo você?
-          <input type="number" name="pessoas" min="1" max="6" value="1">
+          <input type="number" name="pessoas" min="1" max="6" value="1" required>
+          <small class="form__ajuda">Considere apenas as pessoas incluídas no seu convite.</small>
+          <small class="erro" data-erro="pessoas"></small>
         </label>
         <label>Restrição alimentar ou recado
           <textarea name="mensagem" rows="3"></textarea>
         </label>
-        <button type="submit" class="botao">Enviar confirmação</button>
+        <button type="submit" class="botao">Continuar no WhatsApp</button>
         <p class="form__status" id="status" role="status"></p>
       </form>
     </section>
