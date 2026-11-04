@@ -21,7 +21,7 @@
     <nav class="topo__menu" aria-label="Principal">
       <a href="#historia">Nossa história</a>
       <a href="#local">Local</a>
-      <a href="#rsvp" class="topo__cta">Confirmar presença</a>
+      <a href="casamento.ics" download class="topo__cta">Salvar a data</a>
     </nav>
   </header>
 
@@ -31,70 +31,34 @@
       <h1 class="hero__nomes">Giulia<span>&amp;</span>Maikon</h1>
       <p class="hero__data">3 de abril de 2027 · 16h · Votorantim, SP</p>
       <p class="hero__convite">Reserve essa data para celebrar com a gente.</p>
-      <div class="contagem" id="contagem" aria-live="off">
-        <div><strong id="dias">00</strong><span>dias</span></div>
-        <div><strong id="horas">00</strong><span>horas</span></div>
-        <div><strong id="minutos">00</strong><span>minutos</span></div>
-        <div><strong id="segundos">00</strong><span>segundos</span></div>
-      </div>
-      <a class="botao hero__cta" href="#rsvp">Confirmar presença</a>
-      <a class="hero__rolar" href="#historia">Conheça nossa história <span aria-hidden="true">↓</span></a>
+      <p class="contagem" id="contagem" aria-live="off"></p>
+      <a class="botao hero__cta" href="casamento.ics" download>Adicionar ao calendário</a>
+      <a class="hero__rolar" href="#historia">Nossa história <span aria-hidden="true">↓</span></a>
     </section>
+
+    <figure class="foto-casal">
+      <img src="img/foto-pedido.jpeg" alt="Giulia e Maikon no dia do pedido de casamento">
+      <figcaption>Nosso pedido · 12 de outubro de 2025</figcaption>
+    </figure>
+
 
     <section class="secao" id="historia">
       <h2>Nossa história</h2>
       <div class="historia">
-        <p>Dividimos as mesmas aulas de violão quando éramos crianças — os mesmos acordes, a mesma professora, a mesma
-          dificuldade com o dó maior. Crescemos, a vida seguiu, e por um tempo os caminhos foram paralelos sem se tocar.
-        </p>
-        <p>Foi em um festival que tudo mudou. Entre as músicas, ele olhou para ela de um jeito que nenhuma aula havia
-          ensinado. A partir daí, as conversas não tinham mais hora para terminar, as ideias combinavam, e o amor foi
-          crescendo no ritmo certo.</p>
-        <p>No dia 12 de outubro de 2025, veio o pedido. Veio o sim. Agora queremos você ao nosso lado no próximo
-          capítulo.</p>
+        <p>Nos conhecemos ainda crianças, nas aulas de violão. Anos depois, nos reencontramos em um festival e, em 6 de dezembro de 2024, começamos a namorar. Em 12 de outubro de 2025, ficamos noivos.</p>
+        <p>Agora estamos preparando nosso casamento e queremos dividir esse dia com você. Guarde a data: 3 de abril de 2027.</p>
       </div>
     </section>
 
-    <section class="secao" id="galeria">
-      <h2>Nossa história em fotos</h2>
-      <div class="timeline-fotos">
-
-        <div class="timeline-fotos__item">
-          <img src="img/violao.jfif" alt="Aulas de violão">
-          <div class="timeline-fotos__info">
-            <span class="timeline-fotos__ano">2012</span>
-            <h3>O começo de tudo</h3>
-            <p>Duas crianças, os mesmos acordes e o mesmo dó maior travado.</p>
-          </div>
-        </div>
-
-        <div class="timeline-fotos__item">
-          <img src="img/summer.png" alt="O festival">
-          <div class="timeline-fotos__info">
-            <span class="timeline-fotos__ano">2024</span>
-            <h3>O festival</h3>
-            <p>Foi aqui que ele olhou pra ela de um jeito diferente. E o mundo parou.</p>
-          </div>
-        </div>
-
-        <div class="timeline-fotos__item">
-          <img src="img/foto-encontro.jpeg" alt="Primeiro encontro">
-          <div class="timeline-fotos__info">
-            <span class="timeline-fotos__ano">2024</span>
-            <h3>Primeiro encontro</h3>
-            <p>As conversas que não tinham mais hora para terminar.</p>
-          </div>
-        </div>
-
-        <div class="timeline-fotos__item">
-          <img src="img/foto-pedido.jpeg" alt="O pedido">
-          <div class="timeline-fotos__info">
-            <span class="timeline-fotos__ano">12.10.2025</span>
-            <h3>O pedido</h3>
-            <p>Ele perguntou. Ela disse sim. E aqui estamos.</p>
-          </div>
-        </div>
-
+    <section class="secao memorias" id="galeria" aria-label="Nossas lembranças">
+      <figure>
+        <img src="img/foto-encontro.jpeg" alt="Giulia e Maikon no primeiro encontro" loading="lazy">
+        <figcaption>Nosso primeiro encontro, em 2024.</figcaption>
+      </figure>
+      <div class="memorias__texto">
+        <p class="detalhe">Desde as aulas de violão</p>
+        <h2>Uma história que começou bem antes do namoro.</h2>
+        <p>Das aulas na infância ao reencontro no festival, essas lembranças fazem parte de quem somos.</p>
       </div>
     </section>
 
@@ -116,34 +80,11 @@
       </div>
     </section>
 
-    <section class="secao" id="rsvp">
-      <h2>Confirme sua presença</h2>
-      <p class="intro">Responda até 10 de novembro de 2026.</p>
-      <p class="rsvp__ajuda">Ao continuar, o WhatsApp abrirá com sua resposta. Envie a mensagem por lá para concluir a confirmação.</p>
-      <form id="formRsvp" class="form" novalidate>
-        <label>Nome completo
-          <input type="text" name="nome" required autocomplete="name">
-          <small class="erro" data-erro="nome"></small>
-        </label>
-        <label>Você vai?
-          <select name="presenca" required>
-            <option value="">Selecione</option>
-            <option value="Sim, estarei lá">Sim, estarei lá</option>
-            <option value="Não poderei ir">Não poderei ir</option>
-          </select>
-          <small class="erro" data-erro="presenca"></small>
-        </label>
-        <label>Quantas pessoas, incluindo você?
-          <input type="number" name="pessoas" min="1" max="6" value="1" required>
-          <small class="form__ajuda">Considere apenas as pessoas incluídas no seu convite.</small>
-          <small class="erro" data-erro="pessoas"></small>
-        </label>
-        <label>Restrição alimentar ou recado
-          <textarea name="mensagem" rows="3"></textarea>
-        </label>
-        <button type="submit" class="botao">Continuar no WhatsApp</button>
-        <p class="form__status" id="status" role="status"></p>
-      </form>
+    <section class="secao despedida">
+      <p class="detalhe">Giulia &amp; Maikon</p>
+      <h2>Guarde esse dia para nós.</h2>
+      <p>3 de abril de 2027 · Votorantim, SP</p>
+      <a class="botao" href="casamento.ics" download>Adicionar ao calendário</a>
     </section>
   </main>
 

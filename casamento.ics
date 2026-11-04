@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Giulia e Maikon//Save the Date//PT-BR
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:giulia-maikon-20270403@save-the-date
+DTSTAMP:20261103T120000Z
+DTSTART:20270403T190000Z
+SUMMARY:Casamento de Giulia e Maikon
+LOCATION:Paróquia Nossa Senhora Anunciação e dos Arcanjos\, Votorantim
+DESCRIPTION:Cerimônia às 16h (horário de Brasília). Rua Antônio da S
+ ilva\, 72\, Jardim São Matheus\, Votorantim - SP.
+END:VEVENT
+END:VCALENDAR
