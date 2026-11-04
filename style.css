@@ -5,7 +5,7 @@ body{font-family:var(--texto);font-weight:400;color:var(--tinta);background:var(
 a{color:inherit}img{display:block;max-width:100%}:focus-visible{outline:3px solid var(--ouro);outline-offset:5px}
 .topo{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 6vw;border-bottom:1px solid #1b2d4f22}
 .topo__marca{font-family:var(--titulo);font-size:1.6rem;text-decoration:none}
-.topo__menu{display:flex;gap:1.6rem;align-items:center;font-size:.95rem}.topo__menu a{text-decoration:none;padding:.5rem 0}.topo__menu a:hover{text-decoration:underline;text-underline-offset:5px}.topo__cta{border-bottom:1px solid var(--ouro)}
+.topo__menu{display:flex;gap:1.6rem;align-items:center;font-size:.95rem}.topo__menu a{text-decoration:none;padding:.5rem 0}.topo__menu a:not(.topo__cta):hover{text-decoration:underline;text-underline-offset:5px}.topo__menu .topo__cta{padding:.4rem .8rem;border:1px solid var(--marinho);border-radius:3px}.topo__cta:hover{background:var(--marinho);color:var(--papel)}
 .hero{background:var(--marinho);color:var(--papel);text-align:center;padding:4rem 6vw 5rem;display:flex;flex-direction:column;align-items:center}
 .hero__chamada{font-size:.85rem;letter-spacing:.18em;text-transform:uppercase;color:var(--claro)}
 .hero__nomes{font-family:var(--titulo);font-weight:400;font-size:clamp(3.3rem,8.5vw,7.4rem);line-height:1.1;margin:1rem 0 1.5rem}
