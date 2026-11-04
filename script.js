@@ -9,3 +9,26 @@ function atualizarContagem() {
 }
 atualizarContagem();
 setInterval(atualizarContagem, 60000);
+
+const form = document.getElementById('formRsvp');
+const { nome, presenca, acompanhante, mensagem } = form.elements;
+function ajustarQuantidade() {
+  const vai = presenca.value === 'sim';
+  acompanhante.disabled = !vai;
+  document.getElementById('grupo-pessoas').hidden = !vai;
+}
+presenca.addEventListener('change', ajustarQuantidade);
+window.addEventListener('pageshow', ajustarQuantidade);
+ajustarQuantidade();
+form.addEventListener('submit', event => {
+  event.preventDefault();
+  const vai = presenca.value === 'sim';
+  const texto = [
+    'Olá! Aqui é ' + nome.value.trim() + '.',
+    vai ? 'Sim, estarei lá!' : 'Não poderei ir.',
+    vai && (acompanhante.value.trim() ? 'Acompanhante: ' + acompanhante.value.trim() : 'Vou sem acompanhante.'),
+    vai && 'Total de pessoas: ' + (acompanhante.value.trim() ? 2 : 1),
+    mensagem.value.trim() && 'Recado: ' + mensagem.value.trim()
+  ].filter(Boolean).join('\n');
+  window.location.assign('https://wa.me/5515997228905?text=' + encodeURIComponent(texto));
+});

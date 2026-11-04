@@ -30,3 +30,8 @@ h3{font-family:var(--titulo);font-size:1.65rem;font-weight:500;line-height:1.3}
 @media(max-width:760px){.topo{flex-wrap:wrap;gap:.5rem}.topo__menu{gap:1rem;font-size:.85rem}.hero{padding:3rem 6vw}.hero__nomes{max-width:8ch}.hero__nomes span{display:block;line-height:.8;margin:.3rem 0}.secao{padding:3rem 6vw}.memorias,.local{grid-template-columns:1fr;gap:2rem}.foto-casal{margin-top:2rem}.memorias{padding-top:0}.memorias__texto p:last-child{max-width:none}}
 @media(max-width:360px){.topo__menu{width:100%;justify-content:space-between;gap:.4rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.botao{transition:none}}
+.rsvp{max-width:48rem}.rsvp form{display:grid;gap:1rem;margin-top:1.6rem}.rsvp label{display:grid;gap:.35rem}.rsvp [hidden]{display:none}.rsvp input,.rsvp select,.rsvp textarea{width:100%;font:inherit;padding:.65rem .8rem;border:1px solid #8793a3;border-radius:3px;background:#fff;color:var(--tinta)}.rsvp textarea{resize:vertical}.rsvp button{justify-self:start;cursor:pointer}
+
+.rsvp .rsvp__whatsapp{display:inline-flex;align-items:center;justify-content:center;gap:1rem;min-height:48px;margin-top:.5rem;padding:.75rem 1.4rem;border-radius:2rem;font-weight:500;line-height:1.4}
+.rsvp__whatsapp span{font-size:1.25em}
+@media(max-width:600px){.rsvp .rsvp__whatsapp{width:100%;justify-self:stretch}}
