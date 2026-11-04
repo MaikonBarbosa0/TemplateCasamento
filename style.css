@@ -23,7 +23,7 @@ h2{font-family:var(--titulo);font-weight:400;font-size:clamp(2.2rem,4vw,3.3rem);
 h3{font-family:var(--titulo);font-size:1.65rem;font-weight:500;line-height:1.3}
 .historia{max-width:65ch}.historia p+p{margin-top:1rem}
 .memorias{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:center;padding-top:1rem}
-.memorias img{width:100%;height:auto}.detalhe{color:var(--ouro);font-size:.9rem;margin-bottom:1rem}.memorias__texto p:last-child{max-width:35ch}
+.memorias img{width:100%;height:auto}.detalhe{color:var(--ouro);font-size:.9rem;margin-bottom:1rem}.memorias__texto p+p{margin-top:1rem}
 .secao--escura{max-width:none;background:var(--azul);color:var(--papel)}.secao--escura>*{max-width:950px;margin-inline:auto}
 .local{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}.local p{margin:.8rem 0}.local__horario{font-weight:500}.local__mapa iframe{width:100%;height:320px;border:0;border-radius:3px}.local .botao{margin-top:1rem;background:var(--papel);color:var(--marinho);border-color:var(--papel)}
 .despedida{text-align:center}.despedida .botao{margin-top:1.5rem}.rodape{text-align:center;padding:1.5rem 6vw;border-top:1px solid #1b2d4f22;font-family:var(--titulo);font-size:1.2rem}
